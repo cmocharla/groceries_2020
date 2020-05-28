@@ -93,7 +93,11 @@ print("--------------")
 
 unique_departments.sort()
 for d in unique_departments:
-    print(d.title())
+    matching_products = [p for p in products if p["department"] == d]
+    matching_products_count = len(matching_products)
+    #filtering list comprehension
+    print("+ " + d.title() + " (" + str(matching_products_count) +
+          " products)")
 
 #for p in sorted_products:
 
@@ -101,3 +105,9 @@ for d in unique_departments:
 # price_usd = p["price"]
 #price_usd = "${0:.2f}".format(p["price"])
 #  print("+ " + p["name"] + " (" + str(price_usd) + ")")
+
+
+
+# using a list comprehension
+#def teams_from(city):
+  #return [team for team in teams if team["city"] == city]
