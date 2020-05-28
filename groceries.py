@@ -58,7 +58,7 @@ print("--------------")
 print("THERE ARE " + str(products_count) + " PRODUCTS:")
 print("--------------")
 
-#"id":1, "name": 
+#"id":1, "name":
 # "Chocolate Sandwich Cookies",
 # "department": "snacks",
 #  "aisle": "cookies cakes",
@@ -69,9 +69,30 @@ def sort_by_name(any_product):
 sorted_products = sorted(products, key=sort_by_name)
 
 for p in sorted_products:
-   # print(p["name"])
-  # price_usd = p["price"]
-   price_usd = "${0:.2f}".format(p["price"])
-   print("+ " + p["name"] + " (" + str(price_usd) + ")")
+    # print(p["name"])
+    # price_usd = p["price"]
+    price_usd = "${0:.2f}".format(p["price"])
+    print("+ " + p["name"] + " (" + str(price_usd) + ")")
 
+# Products Part one
+departments = []
 
+for p in products:
+    #print(p["department"])
+    #departments.append(p["department"])
+    if p["department"] not in departments:
+        departments.append(p["department"])
+department_count = len(departments)
+print("--------------")
+print("THERE ARE " + str(department_count) + " DEPARTMENTS:")
+print("--------------")
+
+for d in departments:
+    print(d)
+
+#for p in sorted_products:
+
+# print(p["name"])
+# price_usd = p["price"]
+#price_usd = "${0:.2f}".format(p["price"])
+#  print("+ " + p["name"] + " (" + str(price_usd) + ")")
